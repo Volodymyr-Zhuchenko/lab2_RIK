@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Фінансовий помічник</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+
+    <div class="header-controls">
+        <button id="themeToggleBtn" class="theme-btn">
+            <svg class="sun-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="moon-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+    </div>
+
+    <h1 class="main-title">Калькулятор кредита та депозита</h1>
+
+    <div class="container">
+        <div class="input-section">
+            <div class="radio-group">
+                <label class="radio-container">
+                    <input type="radio" name="type" id="rbCredit" checked>
+                    <span class="radio-label">Кредит</span>
+                </label>
+                <label class="radio-container">
+                    <input type="radio" name="type" id="rbDeposit">
+                    <span class="radio-label">Депозит</span>
+                </label>
+            </div>
+
+            <div class="field">
+                <label>Сума (грн)</label>
+                <input type="text" id="amount" placeholder="10 000,00">
+            </div>
+
+            <div class="field">
+                <label>Відсоток (% річних)</label>
+                <input type="text" id="percent" placeholder="0 - 100">
+            </div>
+
+            <div class="field">
+                <label>Термін (місяці)</label>
+                <input type="text" id="months" placeholder="12">
+            </div>
+        </div>
+
+        <div class="result-section">
+            <div id="errorLog" class="error-display"></div>
+            
+            <div class="result-display-stack">
+                <div id="lblResult" class="lbl-res-text">Результат</div>
+                <div id="lblResultNum" class="lbl-res-num">0,00₴</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-actions">
+        <button id="btnSave" class="btn-secondary">Зберегти у файл</button>
+        <button id="btnCalc" class="btn-primary">Розрахувати</button>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
